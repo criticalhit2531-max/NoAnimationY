@@ -1,5 +1,7 @@
+
 plugins {
-    id 'net.fabricmc.fabric-loom' version "${loom_version}"
+    id 'net.fabricmc.fabric-loom' version '1.14.10'
+    id 'maven-publish'
 }
 
 version = project.mod_version
@@ -7,6 +9,10 @@ group = project.maven_group
 
 base {
     archivesName = project.archives_base_name
+}
+
+repositories {
+    mavenCentral()
 }
 
 dependencies {
@@ -17,6 +23,7 @@ dependencies {
 
 processResources {
     inputs.property "version", project.version
+
     filesMatching("fabric.mod.json") {
         expand "version": project.version
     }
@@ -27,8 +34,7 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
     withSourcesJar()
 }
