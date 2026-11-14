@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "id": "noanimation",
+  "version": "${version}",
+  "name": "NoAnimation",
+  "description": "Keeps selected held items visible while suppressing their first-person swing animation.",
+  "authors": ["NoAnimation"],
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "com.noanimation.NoAnimationClient"
+    ]
+  },
+  "mixins": [
+    "noanimation.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "1.21.11",
+    "java": ">=21"
+  }
+}
