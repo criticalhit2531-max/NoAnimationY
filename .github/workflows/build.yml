@@ -54,3 +54,4 @@ jobs:
         with:
           name: NoAnimation-JAR
           path: ${{ env.PROJECT_DIR }}/build/libs/*.jar
+          
